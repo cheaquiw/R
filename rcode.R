@@ -4,6 +4,7 @@ library(sqldf)
 library(cluster)
 library(RColorBrewer)
 library(plotrix)
+library(ggplot2)
 
 #available datasets for mortality and death
   mort <- glob2rx("*mortality*")
@@ -242,8 +243,6 @@ library(plotrix)
     summary(deathsperYearData.lm)      
     
     deathsperYearData <- deathsperYearData[,-c(2)]
-    ggplot(data = normData) +
-      geom_line(x = normData$`1996`)
     s <- c()
     count <- 1
   for (i in SouthAfrica$Cause) {
@@ -255,4 +254,3 @@ library(plotrix)
 s <- unique(s)
 
 View(SouthAfrica)
-?filter
